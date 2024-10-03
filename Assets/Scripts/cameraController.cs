@@ -7,6 +7,7 @@ public class cameraController : MonoBehaviour
     [SerializeField]
     private Vector3 distance;
     private GameObject DragoObject;
+
     private void Start()
     {
         DragoObject = GameObject.FindGameObjectWithTag("Player");
@@ -14,6 +15,7 @@ public class cameraController : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(DragoObject.transform.position.x, 0, 0) + distance;
+        if(DragoObject != null)     
+            transform.position = new Vector3(DragoObject.transform.position.x, 0, 0) + distance;
     }
 }

@@ -19,12 +19,4 @@ public class Bullet : MonoBehaviour
         if (isRigidBody2d) 
             rb.AddForce(new Vector2(velocity, 0));
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wood"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
 }

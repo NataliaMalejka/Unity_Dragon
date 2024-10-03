@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wood
   - Obstacle
+  - Bullet
   layers:
   - Default
   - TransparentFX
