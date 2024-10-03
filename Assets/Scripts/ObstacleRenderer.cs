@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObstacleRenderer : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> obstacles = new List<GameObject>();
     [SerializeField] private float startPosition;
     [SerializeField] private float distance;
 
@@ -20,6 +20,9 @@ public class ObstacleRenderer : MonoBehaviour
 
     private void renderObstacle()
     {
+        int obstacle_number = Random.Range(0, obstacles.Count);
 
+        Instantiate(obstacles[obstacle_number], new UnityEngine.Vector3(distance, 0, 0), UnityEngine.Quaternion.Euler(0, 0, 0));
+        distance += 70;
     }
 }
