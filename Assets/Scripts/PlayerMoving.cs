@@ -9,16 +9,10 @@ public class PlayerMoving : MonoBehaviour
     [Header("Velocity")]
     [SerializeField]private float upVelocity;    
     [SerializeField]private float velocity;
+    [SerializeField] private float upAcceleration;
     [SerializeField] private float acceleration;
-    
-    [Header("Rotation")]
-    [SerializeField] private float maxRotationAngle;
-    [SerializeField]private float rotationSpeed;
-    
-    private float rotationZ;
 
     private BulletSpawner bulletSpawner;
-    private Bullet bullet;
 
     private void Start()
     {
@@ -39,13 +33,13 @@ public class PlayerMoving : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -29, 24), transform.position.z);
 
-        if (velocity < 1.5)
+        if (velocity < 1.7)
             VelocityUpdate();      
     }
 
     private void VelocityUpdate()
     {
         velocity += acceleration * Time.deltaTime;
-        upVelocity += acceleration * Time.deltaTime;
+        upVelocity += upAcceleration * Time.deltaTime;
     }
 }

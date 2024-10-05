@@ -7,8 +7,10 @@ using UnityEngine;
 public class ObstacleRenderer : MonoBehaviour
 {
     [SerializeField] private List<GameObject> obstacles = new List<GameObject>();
-    [SerializeField] private float startPosition;
+    [SerializeField] private float RenderPosition;
     [SerializeField] private float distance;
+
+    private List<GameObject> AddedObstacles = new List<GameObject>();
 
     private void Start()
     {
@@ -18,11 +20,20 @@ public class ObstacleRenderer : MonoBehaviour
         }
     }
 
-    private void renderObstacle()
+    public void renderObstacle()
     {
         int obstacle_number = Random.Range(0, obstacles.Count);
 
-        Instantiate(obstacles[obstacle_number], new UnityEngine.Vector3(distance, 0, 0), UnityEngine.Quaternion.Euler(0, 0, 0));
-        distance += 70;
+        AddedObstacles.Add(Instantiate(obstacles[obstacle_number], new UnityEngine.Vector3(RenderPosition, Random.Range(-17, 27), 0),
+            UnityEngine.Quaternion.Euler(0, 0, 0)));
+
+        if(AddedObstacles.Count > 5)
+        {
+            GameObject obstacleToRemove = AddedObstacles[0];
+            AddedObstacles.Remove(obstacleToRemove);
+            Destroy(obstacleToRemove);
+        }
+
+        RenderPosition += distance;
     }
 }
