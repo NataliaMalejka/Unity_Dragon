@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour
 {
-    private void LoadGame(int index)
+    public void LoadGame(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
