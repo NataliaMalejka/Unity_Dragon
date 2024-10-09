@@ -21,7 +21,12 @@ public class Obstacle : MonoBehaviour
         {
             uimanager.UpdatePointsText();
             obstacleRenderer.renderObstacle();
-            coinRenderer.renderCoin();           
+            coinRenderer.renderCoin();
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("kolizja");
     }
 }

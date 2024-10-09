@@ -8,18 +8,18 @@ public class cameraController : MonoBehaviour
     private Vector3 distance;
     private GameObject DragoObject;
     private GameManager gameManager;
+    private UImanager uiManager;
 
     private void Start()
     {
         DragoObject = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        uiManager = GameObject.FindObjectOfType<UImanager>();
     }
 
     private void Update()
     {
         if (DragoObject != null)
             transform.position = new Vector3(DragoObject.transform.position.x, 0, 0) + distance;
-        else
-            gameManager.GameOver();
     }
 }
