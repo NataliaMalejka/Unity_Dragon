@@ -296,9 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upVelocity: 25
   velocity: 0.4
+  upAcceleration: 0.8
   acceleration: 0.01
-  maxRotationAngle: 60
-  rotationSpeed: 0.5
 --- !u!70 &3339191000122593081
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
