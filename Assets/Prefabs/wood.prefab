@@ -143,3 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e16ee028d6415d41a52a0811af6c7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyWood: {fileID: 8300000, guid: fb3e3c2f1761cec45be924aa08ae43fa, type: 3}
+  volume: 1.8

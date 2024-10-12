@@ -6,7 +6,7 @@ public class Parallax : MonoBehaviour
 {
     private float length;
     private float startPosition;
-    public GameObject camera;
+    public GameObject cam;
     public float parallaxEffect;
 
     private void Start()
@@ -17,8 +17,8 @@ public class Parallax : MonoBehaviour
 
     private void Update()
     {
-        float temp = (camera.transform.position.x * (1 - parallaxEffect));
-        float distanse = (camera.transform.position.x * parallaxEffect);
+        float temp = (cam.transform.position.x * (1 - parallaxEffect));
+        float distanse = (cam.transform.position.x * parallaxEffect);
 
         transform.position = new Vector3(startPosition + distanse, transform.position.y, transform.position.z);
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wood : MonoBehaviour
 {
+    [SerializeField] private AudioClip destroyWood;
+    [SerializeField] private float volume;
     private GameManager gameManager;
     private UImanager uimanager;
     private void Start()
@@ -20,6 +22,7 @@ public class Wood : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Bullet"))
         {
+            AudioSource.PlayClipAtPoint(destroyWood, collision.contacts[0].point, volume);
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
