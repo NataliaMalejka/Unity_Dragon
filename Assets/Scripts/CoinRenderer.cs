@@ -18,7 +18,7 @@ public class CoinRenderer : MonoBehaviour
         {
             AddedCoins.Add(Instantiate(coin, new Vector3(RenderPosition, Random.Range(-17, 27), 0), Quaternion.Euler(0,0,0)));
 
-            if(AddedCoins.Count > 3)
+            if(AddedCoins.Count > 7)
             {
                 GameObject coinToRemove = AddedCoins[0];
                 AddedCoins.Remove(coinToRemove);

@@ -12,15 +12,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestScoreText;
     [SerializeField] private TextMeshProUGUI coinsSumText;
 
+    private SoundsManager soundsManager;
     private Score score = new Score();
 
     private void Start()
     {
+        soundsManager = FindObjectOfType<SoundsManager>();
+
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
+       
         Load();
 
         if(gameOverPanel != null)
             gameOverPanel.SetActive(false);
     }
+
+    public void StartSounds()
+    {
+        soundsManager.PlaySounds(SoundsManager.Sounds.StartGame);
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -30,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadGame(int index)
     {
+        Cursor.visible = false;
         SceneManager.LoadScene(index);
     }
 
@@ -40,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(ref int coinsSum, ref int bestScore)
     {
+        Cursor.visible = true;
         score.coinsSum = coinsSum;
         score.bestScore = bestScore;
         Save();

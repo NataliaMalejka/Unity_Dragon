@@ -12,17 +12,22 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] private float upAcceleration;
     [SerializeField] private float acceleration;
 
+    private SoundsManager soundsManager;
     private BulletSpawner bulletSpawner;
 
     private void Start()
     {
+        soundsManager = FindObjectOfType<SoundsManager>();
         bulletSpawner = FindObjectOfType<BulletSpawner>();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            bulletSpawner.CreateObject();     
+        {
+            soundsManager.PlaySounds(SoundsManager.Sounds.AddBullet);
+            bulletSpawner.CreateObject();
+        }
     }
 
     private void FixedUpdate()

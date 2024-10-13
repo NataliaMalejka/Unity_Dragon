@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyWood: {fileID: 8300000, guid: fb3e3c2f1761cec45be924aa08ae43fa, type: 3}
-  volume: 1.8
+  volume: 1

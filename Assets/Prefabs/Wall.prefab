@@ -145,4 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyBullet: {fileID: 8300000, guid: 95f6d8d21a792314389df6e7b496c509, type: 3}
-  volume: 1.8
+  volume: 2

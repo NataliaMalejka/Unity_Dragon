@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3693610984833524976, guid: 45d7f176c2e53fa4f9ed1549efa2b84e, type: 3}
-  distance: {x: 12, y: 3, z: 0}
+  distance: {x: 10.5, y: 3, z: 0}
 --- !u!1 &796424524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,11 +2462,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 17cd6238efaef4243bf94235a1194055, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2560,6 +2560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c237f6455f932243b046e0aef154196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 8300000, guid: 17cd6238efaef4243bf94235a1194055, type: 3}
+  startGame: {fileID: 8300000, guid: 6a78f8d7cab028d4f8041121b9598e9e, type: 3}
+  collectCoin: {fileID: 8300000, guid: ba3677d53a3bc5541848937e99d4b9be, type: 3}
+  addBullet: {fileID: 8300000, guid: e5fa4afe24061094587373f35fb3ac20, type: 3}
 --- !u!4 &1318071299
 Transform:
   m_ObjectHideFlags: 0
@@ -3381,6 +3385,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 271760223}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartSounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

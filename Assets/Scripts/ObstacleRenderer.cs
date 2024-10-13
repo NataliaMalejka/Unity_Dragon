@@ -27,7 +27,7 @@ public class ObstacleRenderer : MonoBehaviour
         AddedObstacles.Add(Instantiate(obstacles[obstacle_number], new UnityEngine.Vector3(RenderPosition, Random.Range(-17, 27), 0),
             UnityEngine.Quaternion.Euler(0, 0, 0)));
 
-        if(AddedObstacles.Count > 5)
+        if(AddedObstacles.Count > 7)
         {
             GameObject obstacleToRemove = AddedObstacles[0];
             AddedObstacles.Remove(obstacleToRemove);
